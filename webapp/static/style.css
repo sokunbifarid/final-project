@@ -1,10 +1,19 @@
+:root{
+	--white: #FBFDFCff;
+	--feldgrau: #576F6Eff;
+	--cadet-gray: #769291ff;
+	--dark-slate-gray: #21413Eff;
+	--midnight-green: #0F3332ff;
+}/* CSS HEX */
+
+
 body{
-	background-color: #84D78B;
-	
+	background-color: var(--dark-slate-gray);
 }
 
 h1{
-	font-family: "Palette Mosaic", system-ui;
-	font-weight: 400;
+	font-family: "Erica One", sans-serif;
+	font-weight: 600;
 	font-style: normal;
+	color: white
 }
