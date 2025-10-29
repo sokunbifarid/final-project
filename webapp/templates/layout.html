@@ -12,12 +12,14 @@
 		<link href="https://fonts.googleapis.com/css2?family=Erica+One&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="/static/style.css">
 	</head>
-	<body>
-		<header>
+	<body> <!--class="h-100">-->
+		<header class="mb-md-5">
 			<h1 class="text-center">Mini Chess<img width="64" height="64" src="https://img.icons8.com/clouds/100/rook.png" alt="rook"/></h1>
 		</header>
-		{% block body %}{% endblock %}
-		<footer>
+		<div class="mt-5">
+			{% block body %}{% endblock %}
+		</div>
+		<footer class="text-center fixed-bottom">
 			<p>A Sokunbi Farid Product</p>
 			<p>Developed as a final project for Havard CS50x, always from the family of DuCks</p>
 		</footer>
