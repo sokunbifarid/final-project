@@ -6,14 +6,19 @@
 	--midnight-green: #0F3332ff;
 }/* CSS HEX */
 
-
 body{
 	background-color: var(--dark-slate-gray);
+	color: var(--white);
 }
 
 h1{
 	font-family: "Erica One", sans-serif;
-	font-weight: 600;
+	font-weight: 400;
 	font-style: normal;
 	color: white
+}
+
+a{
+	text-decoration: none;
+	color: var(--white);
 }

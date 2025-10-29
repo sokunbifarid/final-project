@@ -1,0 +1,18 @@
+import sqlite3
+
+db_path = "../chess_app_database.db"
+
+def execute(command):
+    if type(command) == str:
+        connection = sqlite3.connect(db_path)
+        cursor = connection.cursor()
+        data = []
+        if command[0] == "SELECT":
+            data = cursor.execute(command).fetchall()
+        else:
+           data = cursor.execute(command)
+        cursor.close()
+        return data
+    else:
+        print(f"argument passed to read from data base is not a string type. Here is what you passed: {command}")
+        return 1
