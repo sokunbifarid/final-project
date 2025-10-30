@@ -6,6 +6,11 @@
 
 {%block body %}
     <p class="thin-text text-center">Welcome challenger! <img width="48" height="48" src="https://img.icons8.com/plasticine/100/greek-helmet.png" alt="greek-helmet"/></p>
+    {% if unable_to_login: %}
+        <p class="notice text-center" style="display: block">Wrong Email or Password inputed.<br> Input the right details</p>
+    {% else %}
+        <p class="notice text-center" style="display: none">Wrong Email or Password inputed.<br> Input the right details</p>
+    {% endif %}
     <form action="/login" method="post" class="text-center">
         <div class="mb-2">
             <label class="small_text">Email:</label>
@@ -19,9 +24,9 @@
         </div>
         <a href="">Forgotten password?</a>
         <br>
-        <button class="buttons-orange">Submit</button>
+        <button class="buttons-orange" type="submit">Submit</button>
         <br>
         <br>
-        <p>Don't have an account?: &nbsp;<button class="buttons-off-white">Register</button></p>
     </form>
+    <p class="text-center">Don't have an account?: &nbsp;<button class="buttons-off-white" onclick="openRegisterPage()">Register</button></p>
 {% endblock %}

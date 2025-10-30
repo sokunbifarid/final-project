@@ -5,8 +5,9 @@
 	--dark-slate-gray: #21413Eff;
 	--midnight-green: #0F3332ff;
 	--orange: rgb(248, 206, 101);
-	--yellow: rgb(255, 255, 106);
-	--off-white: rgb(215, 215, 215);	
+	--yellow: rgb(255, 230, 167);
+	--off-white: rgb(215, 215, 215);
+	--red: 	rgb(228, 15, 15);
 }/* CSS HEX */
 
 body{
@@ -81,4 +82,15 @@ footer{
 .thin-text{
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	font-size: 20px;
+}
+
+.notice{
+	color: var(--red);
+	background-color: var(--off-white);
+	padding: 20px 2px 20px 2px;
+	width: 50vh;
+	border: 1px solid var(--red);
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
 }

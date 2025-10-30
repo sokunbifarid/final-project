@@ -1,6 +1,6 @@
 import sqlite3
 
-db_path = "../chess_app_database.db"
+db_path = "chess_app_database.db"
 
 def db_execute(command):
     if type(command) == str:
