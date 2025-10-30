@@ -6,7 +6,17 @@
 
 {%block body %}
     <p class="thin-text text-center">Join the nation, Join the competitors! <img width="64" height="64" src="https://img.icons8.com/cute-clipart/64/king.png" alt="king"/></p>
+    {% if wrong_credentials: %}
+        <p class="notice text-center">Wrong Email or Password inputed.</p>
+    {% elif account_exists: %}
+        <p class="notice text-center">User account already exists. <br>Login Instead.</p>
+    {% endif %}
     <form action="/register" method="post" class="text-center">
+        <div class="mb-2">
+            <label class="small_text">Username:</label>
+            <br>
+            <input name="username"  type="text" class="rounded input_height" placeholder="Enter username">
+        </div>
         <div class="mb-2">
             <label class="small_text">Email:</label>
             <br>
@@ -18,14 +28,14 @@
             <input type="password" class="rounded input_height" name="password" placeholder="Enter password">
         </div>
         <div class="mb-2">
-            <label class="small_text">Password:</label>
+            <label class="small_text">Confirm Password:</label>
             <br>
             <input type="password" class="rounded input_height" name="confirm-password" placeholder="Enter password again">
         </div>
         <br>
-        <button class="buttons-off-white">Submit</button>
+        <button class="form-buttons-off-white" type="submit">Submit</button>
         <br>
         <br>
-        <p>Have an account?: &nbsp;<button class="buttons-orange">Login</button></p>
     </form>
+    <p class="text-center">Have an account?: &nbsp;<a class="buttons-orange" href="{{ url_for("login") }}">Login</a></p>
 {% endblock %}

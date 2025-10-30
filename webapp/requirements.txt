@@ -1,0 +1,4 @@
+Flask
+Flask_session
+werkzeug.security
+sqlite3

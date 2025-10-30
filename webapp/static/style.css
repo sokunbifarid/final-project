@@ -27,7 +27,6 @@ h1{
 
 a{
 	text-decoration: none;
-	color: var(--white);
 }
 
 footer{
@@ -49,13 +48,27 @@ footer{
 	padding-right: 1%;
 }
 
-.buttons-orange{
+.form-buttons-orange{
 	border-radius: 8%;
 	height: 5vh;
 	min-height: 35px;
 	width: 3vh;
 	min-width: 80px;
 	background-color: var(--orange);
+	color: var(--midnight-green);
+	border-style: hidden;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;	
+}
+
+.buttons-orange{
+	border-radius: 8%;
+	height: 5vh;
+	min-height: 35px;
+	width: 3vh;
+	min-width: 80px;
+	padding: 2vh 3vh 2vh 3vh;
+	background-color: var(--orange);
+	color: var(--midnight-green);
 	border-style: hidden;
 	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -65,10 +78,24 @@ footer{
 	height: 5vh;
 	min-height: 35px;
 	width: 3vh;
-	min-width: 80px;
+	min-width: 150px;
+	padding: 2vh 3vh 2vh 3vh;
 	background-color: var(--off-white);
 	border-style: hidden;
 	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: var(--midnight-green);
+}
+
+.form-buttons-off-white{
+	border-radius: 9%;
+	height: 5vh;
+	min-height: 35px;
+	width: 3vh;
+	min-width: 150px;
+	background-color: var(--off-white);
+	border-style: hidden;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: var(--midnight-green);
 }
 
 .buttons-orange:hover{
@@ -76,6 +103,14 @@ footer{
 }
 
 .buttons-off-white:hover{
+	background-color: var(--white);
+}
+
+.form-buttons-orange:hover{
+	background-color: var(--yellow);
+}
+
+.form-buttons-off-white:hover{
 	background-color: var(--white);
 }
 
