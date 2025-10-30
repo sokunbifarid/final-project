@@ -4,6 +4,9 @@
 	--cadet-gray: #769291ff;
 	--dark-slate-gray: #21413Eff;
 	--midnight-green: #0F3332ff;
+	--orange: rgb(248, 206, 101);
+	--yellow: rgb(255, 255, 106);
+	--off-white: rgb(215, 215, 215);	
 }/* CSS HEX */
 
 body{
@@ -15,7 +18,10 @@ h1{
 	font-family: "Erica One", sans-serif;
 	font-weight: 400;
 	font-style: normal;
-	color: white
+	color: var(--white);
+	background-color: var(--cadet-gray);
+	height: 10vh;
+	line-height: 10vh;
 }
 
 a{
@@ -23,6 +29,56 @@ a{
 	color: var(--white);
 }
 
+footer{
+	background-color: var(--midnight-green);
+	padding: 2.5vh 0px 2.5vh 0px;
+}
+
 .small_text{
 	font-size: 15px;
+}
+
+.input_height{
+	min-height: 25px;
+	height: 5vh;
+	width: 30vh;
+	min-width: 200px;
+	border-style: hidden;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+.buttons-orange{
+	border-radius: 8%;
+	height: 5vh;
+	min-height: 35px;
+	width: 3vh;
+	min-width: 80px;
+	background-color: var(--orange);
+	border-style: hidden;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.buttons-off-white{
+	border-radius: 8%;
+	height: 5vh;
+	min-height: 35px;
+	width: 3vh;
+	min-width: 80px;
+	background-color: var(--off-white);
+	border-style: hidden;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.buttons-orange:hover{
+	background-color: var(--yellow);
+}
+
+.buttons-off-white:hover{
+	background-color: var(--white);
+}
+
+.thin-text{
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 20px;
 }

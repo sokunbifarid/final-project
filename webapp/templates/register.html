@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{%block body %}
+    <p class="thin-text text-center">Join the nation, Join the competitors! <img width="64" height="64" src="https://img.icons8.com/cute-clipart/64/king.png" alt="king"/></p>
+    <form action="/register" method="post" class="text-center">
+        <div class="mb-2">
+            <label class="small_text">Email:</label>
+            <br>
+            <input name="email"  type="email" class="rounded input_height" placeholder="Enter email">
+        </div>
+        <div class="mb-2">
+            <label class="small_text">Password:</label>
+            <br>
+            <input type="password" class="rounded input_height" name="password" placeholder="Enter password">
+        </div>
+        <div class="mb-2">
+            <label class="small_text">Password:</label>
+            <br>
+            <input type="password" class="rounded input_height" name="confirm-password" placeholder="Enter password again">
+        </div>
+        <br>
+        <button class="buttons-off-white">Submit</button>
+        <br>
+        <br>
+        <p>Have an account?: &nbsp;<button class="buttons-orange">Login</button></p>
+    </form>
+{% endblock %}

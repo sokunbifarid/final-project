@@ -2,7 +2,7 @@ import sqlite3
 
 db_path = "../chess_app_database.db"
 
-def execute(command):
+def db_execute(command):
     if type(command) == str:
         connection = sqlite3.connect(db_path)
         cursor = connection.cursor()
