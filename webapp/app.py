@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session, url_for
+from flask_login import LoginManager, login_required
 from flask_session import Session
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 import sqlite3
 import helper
 import user_data
@@ -11,28 +12,34 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = "login"
+
 @app.route("/")
+@login_required
 def index():
-    return redirect("/login")
+    return render_template("index.html")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
         username = request.form.get("username")
-        hashed_password = generate_password_hash(request.form.get("password"))
+        password = request.form.get("password")
         try:  
             cursor = helper.open_database()
-            data = cursor.execute("SELECT * FROM users WHERE username=?", (username)).fetchall()
-            print("data: " + str(data))
-            check_password_hash(data[0]["hash"], hashed_password)
+            data = cursor.execute("SELECT * FROM users WHERE username=?", [username]).fetchone()
             helper.close_database()
-            print("username: " + str(username) + ", hash passowrd: " + str(hashed_password))
-            if len(data) > 0:
-                session["username"] = username
-                session["user_id"] = data[0]["id"]
-                return redirect(url_for("index"))
-            else:
+            if not data:
                 return render_template("login.html", unable_to_login=True)
+            print("data: " + str(data))
+            password_check = check_password_hash(data[3], password)
+            print("username: " + str(username) + ", passowrd: " + str(password))
+            if not password_check:
+                return render_template("login.html", unable_to_login=True)
+            session["username"] = username
+            session["user_id"] = data[0]
+            return redirect(url_for("index"))
         except ValueError as e:
             return render_template("login.html", unable_to_login=True)
     return render_template("login.html", unable_to_login=False)
