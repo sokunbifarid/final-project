@@ -11,7 +11,7 @@
     {% elif account_exists: %}
         <p class="notice text-center">User account already exists. <br>Login Instead.</p>
     {% endif %}
-    <form action="/register" method="post" class="text-center">
+    <form action="/auth/register" method="post" class="text-center">
         <div class="mb-2">
             <label class="small_text">Username:</label>
             <br>
@@ -30,12 +30,12 @@
         <div class="mb-2">
             <label class="small_text">Confirm Password:</label>
             <br>
-            <input type="password" class="rounded input_height" name="confirm-password" placeholder="Enter password again">
+            <input type="password" class="rounded input_height" name="confirm-password" placeholder="Confirm Password">
         </div>
         <br>
         <button class="form-buttons-off-white" type="submit">Submit</button>
         <br>
         <br>
     </form>
-    <p class="text-center">Have an account?: &nbsp;<a class="buttons-orange" href="{{ url_for("login") }}">Login</a></p>
+    <p class="text-center">Have an account?: &nbsp;<a class="buttons-orange" href="{{ url_for("auth.login") }}">Login</a></p>
 {% endblock %}

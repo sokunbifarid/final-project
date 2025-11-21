@@ -1,3 +1,4 @@
+from flask_login import UserMixin
 import sqlite3
 
 db_path = "chess_app_database.db"
@@ -25,17 +26,22 @@ def close_database():
     else:
         print("Database not connected")
 
-# def db_execute(command):
-#     if type(command) == str:
-#         connection = sqlite3.connect(db_path)
-#         cursor = connection.cursor()
-#         data = []
-#         if command[0] == "SELECT":
-#             data = cursor.execute(command).fetchall()
-#         else:
-#            data = cursor.execute(command)
-#         cursor.close()
-#         return data
-#     else:
-#         print(f"argument passed to read from data base is not a string type. Here is what you passed: {command}")
-#         return 1
+class User(UserMixin):
+    def __init__(self, id, username, email):
+        self.id = id
+        self.username = username
+        self.email = email
+    def is_authenticated(self):
+        if self.id and self.username and self.email and self.pasword:
+            return True
+        return False
+    def is_active(self):
+        return True
+    def is_anonymous(self):
+        return False
+    def get_id(self):
+        return self.id
+    def get_email(self):
+        return self.email
+    def get_username(self):
+        return self.username

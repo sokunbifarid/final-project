@@ -9,16 +9,16 @@
     {% if unable_to_login: %}
         <p class="notice text-center" style="display: block">Wrong Email or Password inputed.<br> Input the right details</p>
     {% endif %}
-    <form action="/login" method="post" class="text-center">
+    <form action="/auth/login" method="post" class="text-center">
         <div class="mb-2">
-            <label class="small_text">Username:</label>
+            <label for="email" class="small_text">Email:</label>
             <br>
-            <input name="username"  type="text" class="rounded input_height" placeholder="Enter username">
+            <input name="email"  id="email" type="text" class="rounded input_height" placeholder="Enter email">
         </div>
         <div class="mb-2">
-            <label class="small_text">Password:</label>
+            <label class="small_text" for="password">Password:</label>
             <br>
-            <input type="password" class="rounded input_height" name="password" placeholder="Enter password">
+            <input type="password" id="password" class="rounded input_height" name="password" placeholder="Enter password">
         </div>
         <a href="">Forgotten password?</a>
         <br>
@@ -26,5 +26,5 @@
         <br>
         <br>
     </form>
-    <p class="text-center">Don't have an account?: &nbsp;<a class="buttons-off-white" href="{{ url_for("register") }}">Register</a></p>
+    <p class="text-center">Don't have an account?: &nbsp;<a class="buttons-off-white" href="{{ url_for("auth.register") }}">Register</a></p>
 {% endblock %}
